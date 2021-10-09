@@ -1,5 +1,5 @@
-
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 """Generates an abitrary number of valid .vcf vCard contacts based on the
 parameters set at the beginning of the file. See also:
