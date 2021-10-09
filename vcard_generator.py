@@ -29,11 +29,11 @@ target_fields = {"Name":True,
                  "Email":True,}
 
 # Percentages of fields actually being populated (more randomness)
-frequencyoforg = 33
-frequencyoftitle = 10
-frequencyofaddress = 75
-frequencyofphoto = 40
-frequencyofnoble = 3
+frequency_of_org = 33
+frequency_of_title = 10
+frequency_of_address = 75
+frequency_of_photo = 40
+frequency_of_noble = 3
 
 # Data that we'll use to populate the cards' fields. Traditional swiss names.
 first_names = ["Abi", "Adalie", "Aita", "Albula", "Alyssia", "Amrei", "Andel", "Andrin", "Andrin", "Anica", "Annatina", "Anneli", "Anneli", "Annely", "Annigna", "Annina", "Antonette", "Arale", "Arianita", "Armida", "Armide", "Atreju", "Ayla", "Badin", "Balz", "Barbli", "Beat", "Beat", "Beath", "Beath", "Bendicht", "Bendicht", "Benedikt", "Bengiamin", "Benjas", "Bensehilla", "Bern", "Bernhardin", "Berti", "Bethli", "Bigna", "Binia", "Brandi", "Carissima", "Chasper", "Chatrina", "Chatrina", "Chonz", "Cilgia", "Cla", "Conz", "Corina", "Corinne", "Corsica", "Dani", "Daron", "David", "Divico", "Dorli", "Dumeng", "Dumeni", "Dumeni", "Duri", "Eliane", "Elijan", "Elsa", "Elsi", "Elsy", "Elvezia", "Elvezia", "Emerita", "Emma", "Enie", "Erika", "Erina", "Ernestin", "Fabian", "Fabiola", "Fadri", "Ferdi", "Florin", "Florina", "Flurin", "Flurina", "Franklin", "Franzi", "Fränzi", "Fridolin", "Fridolina", "Friedolin", "Frillix", "Gaudenz", "Gian", "Gianin", "Gianrico", "Gieri", "Gilgian", "Gilgian", "Gillis", "Giuanna", "Giulitta", "Giusep", "Göpf", "Gritli", "Gritli", "Gwer", "Hänggi", "Hanneli", "Hanni", "Hans", "Hans-Rudolf", "Harri", "Heidi", "Heiri", "Helvetia", "Ingenuin", "Inglina", "Innegrit", "Irmalin", "Irmeli", "Irmelin", "Isalie", "Jelsha", "Jilge", "Jo", "Jockel", "Jocki", "Jocky", "Joder", "Jonin", "Jöri", "Jost", "Jovin", "Jovin", "Jürg", "Kaja", "Karin", "Katrin", "Ladina", "Lanessa", "Leon", "Levio", "Lisa", "Lisa-Maria", "Lisa-Katharina", "Lisi", "Loan", "Lorian", "Lorin", "Luc", "Ludewiga", "Lumi", "Lyan", "Madlaina", "Madleina", "Magali", "Marei", "Marilen", "Mark", "Markus", "Marleen", "Maya", "Meinrad", "Melia", "Melinda", "Menga", "Meret", "Midja", "Mylene", "Nando", "Neamy", "Nette", "Niklaus", "Nordin", "Norina", "Pascale", "Paschalis", "Ramona", "Reto", "Reto", "Rita", "Roger", "Rolf", "Rösli", "Ruedi", "Ruedi", "Sana", "Seina", "Selma", "Seraina", "Sereina", "Severin", "Severine", "Simon", "Susi", "Tell", "Töbe", "Ueli", "Urban", "Urs", "Ursina", "Uto", "Vera", "Vreni", "Vroni", "Walo", "Wendelin", "Rösi"]
@@ -55,7 +55,7 @@ titles = ["Dr.", "Dr. Med.", "FH", "Dr", "MBA", "M.B.A.", "Dipl. Ing.", "Archite
 
 # Count all portrait photo images in faces/
 path, dirs, files = next(os.walk("faces/"))
-numberoffaces = len(files)-1
+number_of_faces = len(files)-1  # crude
 
 ################################## Actions ###################################
 
@@ -85,7 +85,7 @@ class CardFiller:
         new_card = ["BEGIN:VCARD", "VERSION:3.0",]
 
         # Upper class promotion
-        if random.randint(0,100) < frequencyofnoble:
+        if random.randint(0,100) < frequency_of_noble:
             noble = random.choice(["Von", "Van", "Zu"])
         else:
             noble = ''
@@ -112,18 +112,18 @@ class CardFiller:
             fnamefield += str(self.last_names[position % len(self.last_names)])
             new_card.append(fnamefield)
 
-        if "Organization" in target_fields and random.randint(0,100) < frequencyoforg:
+        if "Organization" in target_fields and random.randint(0,100) < frequency_of_org:
             orgfield = "ORG:"
             orgfield += str(self.orgs[position % len(self.orgs)])
             new_card.append(orgfield)
 
-        if "Title" in target_fields and random.randint(0,100) < frequencyoftitle:
+        if "Title" in target_fields and random.randint(0,100) < frequency_of_title:
             titlefield = "TITLE:"
             titlefield += str(self.titles[position % len(self.titles)])
             new_card.append(titlefield)
 
-        if "Photo" in target_fields and random.randint(0,100) < frequencyofphoto:
-            filepath = "faces/"+str(random.randint(1,numberoffaces))+".jpg"
+        if "Photo" in target_fields and random.randint(0,100) < frequency_of_photo:
+            filepath = "faces/"+str(random.randint(1,number_of_faces))+".jpg"
             with open(filepath, "rb") as imagefile:
                 base64img = base64.b64encode(imagefile.read())
             photofield = "PHOTO;TYPE=JPEG;ENCODING=b:"
@@ -148,7 +148,7 @@ class CardFiller:
             phonefield += "%02d" % random.randrange(10,99)
             new_card.append(phonefield)
 
-        if "Address" in target_fields and random.randint(0,100) < frequencyofaddress:
+        if "Address" in target_fields and random.randint(0,100) < frequency_of_address:
             addrfield = "ADR;WORK:;;"
             addrfield += str(self.streets[position % len(self.streets)])
             addrfield += " "
@@ -166,7 +166,7 @@ class CardFiller:
 
         if "Email" in target_fields:
             emailfield = "EMAIL;PREF;INTERNET:"
-            specialcharmap = {
+            special_char_map = {
                 ord(u'Ä'): u'Ae',
                 ord(u'Ü'): u'Ue',
                 ord(u'Ö'): u'Oe',
@@ -174,8 +174,8 @@ class CardFiller:
                 ord(u'ü'): u'ue',
                 ord(u'ö'): u'oe',
                 }
-            firstname = unicode(str.lower(self.first_names[position % len(self.first_names)]), "utf-8").translate(specialcharmap)
-            lastname = unicode(str.lower(self.last_names[position % len(self.last_names)]), "utf-8").translate(specialcharmap)
+            firstname = unicode(str.lower(self.first_names[position % len(self.first_names)]), "utf-8").translate(special_char_map)
+            lastname = unicode(str.lower(self.last_names[position % len(self.last_names)]), "utf-8").translate(special_char_map)
             if random.randint(0,100) < 50:
                 emailfield += "{}{}".format(firstname, lastname)
             elif random.randint(0,100) < 50:
@@ -190,8 +190,8 @@ class CardFiller:
 
         # Create fake revision timestamp in the past up to two years ago
         now = datetime.datetime.now()
-        randomedittime = now - datetime.timedelta(seconds=random.randrange(0,60*60*24*30*12*2))
-        new_card.append("REV:%s" % randomedittime.strftime('%Y%m%dT%H%M%SZ'))  # revision date; format: 20140301T221110Z
+        random_rev_time = now - datetime.timedelta(seconds=random.randrange(0,60*60*24*30*12*2))
+        new_card.append("REV:%s" % random_rev_time.strftime('%Y%m%dT%H%M%SZ'))  # revision date; format: 20140301T221110Z
         new_card.append("END:VCARD")
         return new_card
 
