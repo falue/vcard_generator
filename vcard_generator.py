@@ -177,11 +177,11 @@ class CardFiller:
             firstname = unicode(str.lower(self.first_names[position % len(self.first_names)]), "utf-8").translate(specialcharmap)
             lastname = unicode(str.lower(self.last_names[position % len(self.last_names)]), "utf-8").translate(specialcharmap)
             if random.randint(0,100) < 50:
-                emailfield += firstname + lastname
+                emailfield += "{}{}".format(firstname, lastname)
             elif random.randint(0,100) < 50:
-                emailfield +=  firstname[0] + "." + lastname
+                emailfield +=  "{}.{}".format(firstname[0], lastname)
             elif random.randint(0,100) < 50:
-                emailfield +=  firstname + str(random.randrange(75,99))
+                emailfield +=  "{}{}".format(firstname, str(random.randrange(75,99)))
             else:
                 emailfield += lastname
             emailfield += "@"
@@ -240,7 +240,7 @@ if __name__ == '__main__':
         print "Try a shorter filename."
         sys.exit()
     card_limit = int(sys.argv[1])
-    card_export_file = sys.argv[2] + ".vcard"
+    card_export_file = "{}.vcard".format(sys.argv[2])
 
     # Writing to disk.
     try:
@@ -254,7 +254,7 @@ if __name__ == '__main__':
                 for c in rolodex:
                     rolodex_file.write(c)
                     rolodex_file.write("\n")
-                print 'Successfully created file "' + card_export_file + '" with ' + str(card_limit) + ' cards.'
+                print "Successfully created file '{}' with {} cards.".format(card_export_file, card_limit)
         except IOError, ioerr_msg:
             print "The script couldn't create a file for the vcards."
             print "The specific problem was '%s'" % ioerr_msg
