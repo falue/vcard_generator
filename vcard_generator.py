@@ -10,7 +10,9 @@ Based on gist by brighid
 https://gist.github.com/brighid/58519d5849701a1f4ec2
 """
 
-import random, sys
+import random, sys, os
+import base64
+import datetime
 
 ################################## Parameters ##################################
 
