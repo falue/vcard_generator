@@ -187,7 +187,11 @@ class CardFiller:
             emailfield += "@"
             emailfield += str(self.domains[position % len(self.domains)])
             new_card.append(emailfield)
-        new_card.append("REV:%d" % random.randrange(100,500))
+
+        # Create fake revision timestamp in the past up to two years ago
+        now = datetime.datetime.now()
+        randomedittime = now - datetime.timedelta(seconds=random.randrange(0,60*60*24*30*12*2))
+        new_card.append("REV:%s" % randomedittime.strftime('%Y%m%dT%H%M%SZ'))  # revision date; format: 20140301T221110Z
         new_card.append("END:VCARD")
         return new_card
 
