@@ -1,0 +1,106 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bianchi;Reto;
+FN:Reto Bianchi
+TEL;WORK;VOICE:00 41 78 978 17 83
+ADR;WORK:;;Rathausquai 158;Geneva;GE;1200;Switzerland
+EMAIL;PREF;INTERNET:reto85@gmx.net
+CLASS:vcard_generator
+REV:20200501T181813Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Burkhalter;Seina;
+FN:Seina Burkhalter
+ORG:Buchhaltung Burkhart GmbH
+TEL;WORK;VOICE:077 452 37 13
+ADR;WORK:;;Rosengart Platz 174;Basel;BS;4000;Switzerland
+EMAIL;PREF;INTERNET:seina81@bluewin.ch
+CLASS:vcard_generator
+REV:20210616T011402Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Ackermann;Elvezia;
+FN:Elvezia Ackermann
+TEL;WORK;VOICE:00 41 78 831 75 28
+EMAIL;PREF;INTERNET:e.ackermann@hotmail.com
+CLASS:vcard_generator
+REV:20210522T135638Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Weibel;Gilgian;
+FN:Gilgian Weibel
+ORG:Fotoshoot2theMAXX GmbH
+TITLE:Dr. Med. Dent.
+TEL;WORK;VOICE:00 41 77 448 46 40
+ADR;WORK:;;Pilatusstrasse 156;Bern;BE;3000;Switzerland
+EMAIL;PREF;INTERNET:gilgianweibel@gmail.com
+CLASS:vcard_generator
+REV:20191102T111317Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Studer;Lyan;
+FN:Lyan Studer
+ORG:Restaurant Mimose
+TEL;WORK;VOICE:077 376 66 86
+ADR;WORK:;;Dorenbach 218;Winterthur;ZH;8400;Switzerland
+EMAIL;PREF;INTERNET:lyanstuder@protonmail.com
+CLASS:vcard_generator
+REV:20201020T101545Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Isler;Madlaina;
+FN:Madlaina Isler
+TEL;WORK;VOICE:076 202 28 45
+ADR;WORK:;;Mühlenplatz 209;Lucerne;LU;6000;Switzerland
+EMAIL;PREF;INTERNET:madlainaisler@domainhost.com
+CLASS:vcard_generator
+REV:20200309T223823Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Huber;Barbli;
+FN:Barbli Huber
+ORG:Bücherwurm AG
+TEL;WORK;VOICE:078 766 11 63
+ADR;WORK:;;Nationalquai 139;St. Gallen;SG;9000;Switzerland
+EMAIL;PREF;INTERNET:barblihuber@hostpoint.ch
+CLASS:vcard_generator
+REV:20210601T015100Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Braun;Joder;
+FN:Joder Braun
+ORG:Hausreinigungen & So GmbH
+TEL;WORK;VOICE:00 41 78 145 84 91
+ADR;WORK:;;Voltastrasse 24;Lugano;TI;6900;Switzerland
+EMAIL;PREF;INTERNET:j.braun@green.ch
+CLASS:vcard_generator
+REV:20200203T174306Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Da;Hänggi;
+FN:Hänggi Da
+ORG:Autoservice
+TEL;WORK;VOICE:00 41 76 937 73 44
+ADR;WORK:;;Franziskanerplatz 189;Biel/Bienne;BE;2500;Switzerland
+EMAIL;PREF;INTERNET:haenggida@gmx.ch
+CLASS:vcard_generator
+REV:20200815T063610Z
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Walser;Flurin;
+FN:Flurin Walser
+TEL;WORK;VOICE:00 41 76 372 85 12
+ADR;WORK:;;Haldenstrasse 141;Thun;BE;3600;Switzerland
+EMAIL;PREF;INTERNET:walser@gmx.net
+CLASS:vcard_generator
+REV:20210109T080623Z
+END:VCARD

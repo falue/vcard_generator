@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Hofer;Bendicht;
+FN:Bendicht Hofer
+TEL;WORK;VOICE:00 41 76 662 84 29
+EMAIL;PREF;INTERNET:bendichthofer@gmx.net
+CLASS:vcard_generator
+REV:20200930T081212Z
+END:VCARD
