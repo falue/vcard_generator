@@ -5,6 +5,9 @@
 parameters set at the beginning of the file. See also:
 http://softwareas.com/vcard-for-developers
 http://en.wikipedia.org/wiki/VCard
+
+Based on gist by brighid
+https://gist.github.com/brighid/58519d5849701a1f4ec2
 """
 
 import random, sys
