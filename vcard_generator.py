@@ -221,7 +221,7 @@ if __name__ == '__main__':
 
     # Sanity checks.
     if len(sys.argv) != 3:
-        print "This script requires exactly two arguments and python2: \n",
+        print "This script requires exactly two arguments (and python2!): \n",
         print "* The number of vCards to generate \n",
         print  "* The name of the file to store them in. \n"
         sys.exit()
@@ -254,6 +254,7 @@ if __name__ == '__main__':
                 for c in rolodex:
                     rolodex_file.write(c)
                     rolodex_file.write("\n")
+                print 'Successfully created file "' + card_export_file + '" with ' + str(card_limit) + ' cards.'
         except IOError, ioerr_msg:
             print "The script couldn't create a file for the vcards."
             print "The specific problem was '%s'" % ioerr_msg
