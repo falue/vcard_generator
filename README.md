@@ -1,11 +1,16 @@
 # vcard generator
-If you need to fill your DB or device with real-looking dummy data (vcard contacts), you're in luck, this is for you. This generates 1-65000 contact names and addresses in a single vcard file to be imported in your contacts app.
+If you need to fill your DB or device with real-looking contact data, you're in luck, this is for you. This generates a lot of contact names, addresses and various details in a single vcard file to be imported in most address book apps.
 
 This repo is relying heavily on the gist by brighid:
 https://gist.github.com/brighid/58519d5849701a1f4ec2
 
 I increased the diversity of various fields, added base64 encoded profile images, added UTF-8 support for those fancy äöü's, and also localized it to my region (switzerland).
 Your use case may differ.
+
+## Disclaimer
+However, the names and numbers are not totally unique. Depending on the ratio between the length of the names lists and the number of contacts you want to generate; duplicates may be a certainty.
+
+Also be aware that the phone numbers and/or people with those exact names or email addresses may actually exist. Don't call.
 
 ## Use it
 ```
